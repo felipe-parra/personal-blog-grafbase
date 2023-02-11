@@ -1,0 +1,40 @@
+type TodoList @model {
+  id: ID!
+  title: String!
+  todos: [Todo]
+}
+
+type Todo @model {
+  id: ID!
+  title: String!
+  complete: Boolean!
+}
+
+type Post @model {
+  id: ID!
+  title: String!
+  description: String
+  body: String
+  images: [Image]
+  references: [Reference]
+  url: URL
+  comments: [Comment]
+}
+
+type Comment @model {
+  id: ID!
+  content: String
+  post: Post
+}
+
+type Image @model {
+  id: ID!
+  url: URL
+  post: Post
+}
+
+type Reference @model {
+  id: ID!
+  url: URL
+  post: Post
+}
